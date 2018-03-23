@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>{{ header_text }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    .navbar-center
+    {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+    }
+    .template-body
+    {
+        border-radius: 5px;
+        width: 60%;
+        margin: 0px auto;
+        float: none;
+    }
+    @media (max-width: 1000px) {
+    .template-body {
+       width: 95%;
+      }
+    }
+    @media (min-width: 2000px) {
+    .template-body {
+       width: 1000px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="nav navbar-nav navbar-left">
+          <img style="width:20%;height:auto;padding:15px" src="{{image_host}}logo.png"></img>
+        </div>
+        <div class="nav navbar-center navbar-text" style="font-weight:bold;font-size:2ev">{{ project_name }} {{ header_text }} [ {{ version }} ]</div>
+      </div>
+    </nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% block release_summary %}
+<br><br>
+{% for issue in issues %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 id="{{issue.key}}" class="panel-title">{{issue.key}} - {{issue.summary}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-md-6" style="word-break:break-all;">
+          <b>Description:</b><br><br>
+          {{issue.description or "Sorry, no " + header_text|lower + " are available!"}}
+        </div>
+        <br>
+        <div class="col-md-6">
+            <div class="well">
+              <b>Info:</b><br><br>
+              <div>
+              Assignee:<br>
+              {{issue.assignee}}<br>
+              <hr style="color: #d9d9d9;background-color: #d9d9d9;height: 1px;border: none;">
+              Jira Key:<br>
+                  <a href="{{issue.link}}">{{issue.key}}</a>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+        {% if issue.image_url is not none %}
+            <img style="width:100%" src="{{ issue.image_url }}">
+        {% endif %}
+        </div>
+    </div> 
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

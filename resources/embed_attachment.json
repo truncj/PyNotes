@@ -1,0 +1,16 @@
+{
+	"type": "page",
+	"title": "{pageTitle}",
+	"ancestors": [{
+		"id": 39190640
+	}],
+	"space": {
+		"key": "CO"
+	},
+	"body": {
+		"storage": {
+            "value": "{html}<iframe id=\"result\" style=\"width: 100%; height: 100vh;border:none;\" scrolling=\"yes\"><\/iframe>\r\n<script>\r\n$(document).ready(function() {\r\n$.ajax({\r\n method: 'GET',\r\n url: '\/confluence\/download\/attachments\/{pageId}\/update.html',\r\n dataType: 'text',\r\n success: function(data) {\r\n var iframe = document.getElementById('result');\r\niframe = iframe.contentWindow || ( iframe.contentDocument.document || iframe.contentDocument);\r\n\r\niframe.document.open();\r\niframe.document.write(data);\r\niframe.document.close();\r\n }\r\n});\r\n});\r\n<\/script>{html}",
+			"representation": "wiki"
+		}
+	}
+}

@@ -1,0 +1,12 @@
+{% block release_index %}
+<div class="panel panel-default">
+<table class="table table-bordered">
+{% for issue in issues %}
+    <tr>
+      <td>{{issue.key}}</td>
+      <td>{{issue.summary}}</td>
+    </tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

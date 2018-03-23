@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="template-body">
+<div style="clear: both">
+<h3 style="float: left">Hi all,</h3><h4 style="float: right;">
+    <!--<a href="mailto:?subject={{ project_name }}%20{{ header_text }} as of-->
+<!--%20{{ version }}&body=Here%20are%20the%20{{ header_text|lower }}:%0A{{ results_url }}/artifact/JOB1/update/update.html">-->
+<!--Share these {{ header_text|lower }}</a>-->
+</h4><br><br><br>
+</div>
+<h4>Here are the changes from {{ version }} of {{ project_name }}<br><br>
+Please see the {{ header_text|lower }} below: </h4><br>
+{% include "release_index.html" %}
+{% include "release_summary.html" %}
+</div>
+{% endblock %}
